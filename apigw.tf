@@ -12,8 +12,9 @@ module "api_gateway_acm" {
   source  = "terraform-aws-modules/acm/aws"
   version = "5.1.1"
 
-  domain_name = var.apigw_custom_domain_name
-  zone_id     = var.apigw_dns_zone_id
+  create_domain_name = var.apigw_custom_domain_name != null
+  domain_name        = var.apigw_custom_domain_name
+  zone_id            = var.apigw_dns_zone_id
 
   validation_method = "DNS"
 

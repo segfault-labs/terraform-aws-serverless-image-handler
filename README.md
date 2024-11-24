@@ -40,7 +40,7 @@
 |------|-------------|------|---------|:--------:|
 | <a name="input_apigw_custom_domain_name"></a> [apigw\_custom\_domain\_name](#input\_apigw\_custom\_domain\_name) | n/a | `string` | `null` | no |
 | <a name="input_apigw_dns_zone_id"></a> [apigw\_dns\_zone\_id](#input\_apigw\_dns\_zone\_id) | n/a | `string` | `null` | no |
-| <a name="input_authorizers"></a> [authorizers](#input\_authorizers) | n/a | `any` | `null` | no |
+| <a name="input_authorizers"></a> [authorizers](#input\_authorizers) | n/a | `any` | `{}` | no |
 | <a name="input_cdn_custom_domain_name"></a> [cdn\_custom\_domain\_name](#input\_cdn\_custom\_domain\_name) | n/a | `string` | `null` | no |
 | <a name="input_cdn_custom_domain_names"></a> [cdn\_custom\_domain\_names](#input\_cdn\_custom\_domain\_names) | n/a | `list(string)` | `[]` | no |
 | <a name="input_cdn_direct_access_path_pattern"></a> [cdn\_direct\_access\_path\_pattern](#input\_cdn\_direct\_access\_path\_pattern) | n/a | `string` | `null` | no |
@@ -59,7 +59,7 @@
 | <a name="input_secrets_manager"></a> [secrets\_manager](#input\_secrets\_manager) | n/a | `string` | `null` | no |
 | <a name="input_source_bucket"></a> [source\_bucket](#input\_source\_bucket) | n/a | `string` | n/a | yes |
 | <a name="input_source_bucket_policy"></a> [source\_bucket\_policy](#input\_source\_bucket\_policy) | n/a | `string` | `"{}"` | no |
-| <a name="input_stage_access_log_settings"></a> [stage\_access\_log\_settings](#input\_stage\_access\_log\_settings) | n/a | `any` | `null` | no |
+| <a name="input_stage_access_log_settings"></a> [stage\_access\_log\_settings](#input\_stage\_access\_log\_settings) | n/a | <pre>object({<br>    create_log_group            = optional(bool, true)<br>    destination_arn             = optional(string)<br>    format                      = optional(string)<br>    log_group_name              = optional(string)<br>    log_group_retention_in_days = optional(number, 1)<br>    log_group_kms_key_id        = optional(string)<br>    log_group_skip_destroy      = optional(bool)<br>    log_group_class             = optional(string)<br>    log_group_tags              = optional(map(string), {})<br>  })</pre> | <pre>{<br>  "create_log_group": false<br>}</pre> | no |
 
 ## Outputs
 

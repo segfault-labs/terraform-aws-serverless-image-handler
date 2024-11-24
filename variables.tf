@@ -32,13 +32,23 @@ variable "log_retention" {
 }
 
 variable "stage_access_log_settings" {
-  type    = any
-  default = null
+  type = object({
+    create_log_group            = optional(bool, true)
+    destination_arn             = optional(string)
+    format                      = optional(string)
+    log_group_name              = optional(string)
+    log_group_retention_in_days = optional(number, 1)
+    log_group_kms_key_id        = optional(string)
+    log_group_skip_destroy      = optional(bool)
+    log_group_class             = optional(string)
+    log_group_tags              = optional(map(string), {})
+  })
+  default = { create_log_group = false }
 }
 
 variable "authorizers" {
   type    = any
-  default = null
+  default = {}
 }
 
 variable "lambda_auto_webp" {
