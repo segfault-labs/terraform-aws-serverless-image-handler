@@ -25,7 +25,8 @@ module "api_gateway_acm" {
 }
 
 module "api_gateway" {
-  source = "terraform-aws-modules/apigateway-v2/aws"
+  source  = "terraform-aws-modules/apigateway-v2/aws"
+  version = "5.2.0"
 
   name          = var.name
   protocol_type = "HTTP"

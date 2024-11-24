@@ -1,4 +1,5 @@
 data "aws_iam_policy_document" "s3_bucket_policy" {
+  count = source_bucket_policy == "{}" ? 0 : 1
   override_policy_documents = [
     var.source_bucket_policy,
   ]
@@ -30,8 +31,9 @@ data "aws_iam_policy_document" "s3_bucket_policy" {
 }
 
 resource "aws_s3_bucket_policy" "allow_access_from_another_account" {
+  count  = source_bucket_policy == "{}" ? 0 : 1
   bucket = data.aws_s3_bucket.bucket.id
-  policy = data.aws_iam_policy_document.s3_bucket_policy.json
+  policy = data.aws_iam_policy_document.s3_bucket_policy[0].json
 }
 
 module "cdn_acm" {

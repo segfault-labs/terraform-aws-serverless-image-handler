@@ -51,7 +51,8 @@ resource "aws_iam_policy" "lambda_function" {
 }
 
 module "lambda_function" {
-  source = "terraform-aws-modules/lambda/aws"
+  source  = "terraform-aws-modules/lambda/aws"
+  version = "7.15.0"
 
   function_name = var.name
 
