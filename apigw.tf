@@ -12,9 +12,8 @@ module "api_gateway_acm" {
   source  = "terraform-aws-modules/acm/aws"
   version = "5.1.1"
 
-  create_domain_name = var.apigw_custom_domain_name != null
-  domain_name        = var.apigw_custom_domain_name
-  zone_id            = var.apigw_dns_zone_id
+  domain_name = var.apigw_custom_domain_name
+  zone_id     = var.apigw_dns_zone_id
 
   validation_method = "DNS"
 
@@ -32,7 +31,8 @@ module "api_gateway" {
   name          = var.name
   protocol_type = "HTTP"
 
-  domain_name = var.apigw_custom_domain_name
+  create_domain_name = var.apigw_custom_domain_name != null
+  domain_name        = var.apigw_custom_domain_name
 
   stage_access_log_settings = var.stage_access_log_settings
   authorizers               = var.authorizers
