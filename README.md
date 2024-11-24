@@ -66,4 +66,5 @@
 | Name | Description |
 |------|-------------|
 | <a name="output_cdn_domain_name"></a> [cdn\_domain\_name](#output\_cdn\_domain\_name) | n/a |
+| <a name="output_cloudfront_arn"></a> [cloudfront\_arn](#output\_cloudfront\_arn) | n/a |
 <!-- END_TF_DOCS -->
