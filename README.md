@@ -46,17 +46,17 @@
 | <a name="input_cdn_direct_access_path_pattern"></a> [cdn\_direct\_access\_path\_pattern](#input\_cdn\_direct\_access\_path\_pattern) | n/a | `string` | `null` | no |
 | <a name="input_cdn_dns_zone_id"></a> [cdn\_dns\_zone\_id](#input\_cdn\_dns\_zone\_id) | n/a | `string` | `null` | no |
 | <a name="input_cdn_price_class"></a> [cdn\_price\_class](#input\_cdn\_price\_class) | n/a | `string` | `"PriceClass_100"` | no |
-| <a name="input_cors_enabled"></a> [cors\_enabled](#input\_cors\_enabled) | n/a | `string` | `null` | no |
-| <a name="input_cors_origin"></a> [cors\_origin](#input\_cors\_origin) | n/a | `string` | `null` | no |
-| <a name="input_lambda_auto_webp"></a> [lambda\_auto\_webp](#input\_lambda\_auto\_webp) | n/a | `string` | `null` | no |
-| <a name="input_lambda_default_fallback_image_key"></a> [lambda\_default\_fallback\_image\_key](#input\_lambda\_default\_fallback\_image\_key) | n/a | `string` | `null` | no |
-| <a name="input_lambda_enable_default_fallback_image"></a> [lambda\_enable\_default\_fallback\_image](#input\_lambda\_enable\_default\_fallback\_image) | n/a | `string` | `null` | no |
-| <a name="input_lambda_enable_signature"></a> [lambda\_enable\_signature](#input\_lambda\_enable\_signature) | n/a | `string` | `null` | no |
+| <a name="input_cors_enabled"></a> [cors\_enabled](#input\_cors\_enabled) | n/a | `string` | `"Yes"` | no |
+| <a name="input_cors_origin"></a> [cors\_origin](#input\_cors\_origin) | n/a | `string` | `"*"` | no |
+| <a name="input_lambda_auto_webp"></a> [lambda\_auto\_webp](#input\_lambda\_auto\_webp) | n/a | `string` | `"No"` | no |
+| <a name="input_lambda_default_fallback_image_key"></a> [lambda\_default\_fallback\_image\_key](#input\_lambda\_default\_fallback\_image\_key) | n/a | `string` | `"No"` | no |
+| <a name="input_lambda_enable_default_fallback_image"></a> [lambda\_enable\_default\_fallback\_image](#input\_lambda\_enable\_default\_fallback\_image) | n/a | `string` | `""` | no |
+| <a name="input_lambda_enable_signature"></a> [lambda\_enable\_signature](#input\_lambda\_enable\_signature) | n/a | `string` | `"No"` | no |
 | <a name="input_log_bucket"></a> [log\_bucket](#input\_log\_bucket) | n/a | `string` | `null` | no |
 | <a name="input_log_retention"></a> [log\_retention](#input\_log\_retention) | n/a | `number` | `1` | no |
 | <a name="input_name"></a> [name](#input\_name) | n/a | `string` | n/a | yes |
-| <a name="input_secret_key"></a> [secret\_key](#input\_secret\_key) | n/a | `string` | `null` | no |
-| <a name="input_secrets_manager"></a> [secrets\_manager](#input\_secrets\_manager) | n/a | `string` | `null` | no |
+| <a name="input_secret_key"></a> [secret\_key](#input\_secret\_key) | n/a | `string` | `""` | no |
+| <a name="input_secrets_manager"></a> [secrets\_manager](#input\_secrets\_manager) | n/a | `string` | `""` | no |
 | <a name="input_source_bucket"></a> [source\_bucket](#input\_source\_bucket) | n/a | `string` | n/a | yes |
 | <a name="input_source_bucket_policy"></a> [source\_bucket\_policy](#input\_source\_bucket\_policy) | n/a | `string` | `"{}"` | no |
 | <a name="input_stage_access_log_settings"></a> [stage\_access\_log\_settings](#input\_stage\_access\_log\_settings) | n/a | <pre>object({<br>    create_log_group            = optional(bool, true)<br>    destination_arn             = optional(string)<br>    format                      = optional(string)<br>    log_group_name              = optional(string)<br>    log_group_retention_in_days = optional(number, 1)<br>    log_group_kms_key_id        = optional(string)<br>    log_group_skip_destroy      = optional(bool)<br>    log_group_class             = optional(string)<br>    log_group_tags              = optional(map(string), {})<br>  })</pre> | <pre>{<br>  "create_log_group": false<br>}</pre> | no |

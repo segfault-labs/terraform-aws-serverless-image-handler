@@ -13,12 +13,12 @@ variable "source_bucket_policy" {
 
 variable "cors_enabled" {
   type    = string
-  default = null
+  default = "Yes"
 }
 
 variable "cors_origin" {
   type    = string
-  default = null
+  default = "*"
 }
 
 variable "log_bucket" {
@@ -53,32 +53,32 @@ variable "authorizers" {
 
 variable "lambda_auto_webp" {
   type    = string
-  default = null
+  default = "No"
 }
 
 variable "lambda_enable_signature" {
   type    = string
-  default = null
+  default = "No"
 }
 
 variable "lambda_enable_default_fallback_image" {
   type    = string
-  default = null
+  default = ""
 }
 
 variable "lambda_default_fallback_image_key" {
   type    = string
-  default = null
+  default = "No"
 }
 
 variable "secrets_manager" {
   type    = string
-  default = null
+  default = ""
 }
 
 variable "secret_key" {
   type    = string
-  default = null
+  default = ""
 }
 
 variable "apigw_custom_domain_name" {
