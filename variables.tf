@@ -43,7 +43,7 @@ variable "stage_access_log_settings" {
     log_group_class             = optional(string)
     log_group_tags              = optional(map(string), {})
   })
-  default = { create_log_group = false }
+  default = {}
 }
 
 variable "authorizers" {

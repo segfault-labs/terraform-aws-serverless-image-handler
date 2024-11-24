@@ -59,7 +59,7 @@
 | <a name="input_secrets_manager"></a> [secrets\_manager](#input\_secrets\_manager) | n/a | `string` | `""` | no |
 | <a name="input_source_bucket"></a> [source\_bucket](#input\_source\_bucket) | n/a | `string` | n/a | yes |
 | <a name="input_source_bucket_policy"></a> [source\_bucket\_policy](#input\_source\_bucket\_policy) | n/a | `string` | `"{}"` | no |
-| <a name="input_stage_access_log_settings"></a> [stage\_access\_log\_settings](#input\_stage\_access\_log\_settings) | n/a | <pre>object({<br>    create_log_group            = optional(bool, true)<br>    destination_arn             = optional(string)<br>    format                      = optional(string)<br>    log_group_name              = optional(string)<br>    log_group_retention_in_days = optional(number, 1)<br>    log_group_kms_key_id        = optional(string)<br>    log_group_skip_destroy      = optional(bool)<br>    log_group_class             = optional(string)<br>    log_group_tags              = optional(map(string), {})<br>  })</pre> | <pre>{<br>  "create_log_group": false<br>}</pre> | no |
+| <a name="input_stage_access_log_settings"></a> [stage\_access\_log\_settings](#input\_stage\_access\_log\_settings) | n/a | <pre>object({<br>    create_log_group            = optional(bool, true)<br>    destination_arn             = optional(string)<br>    format                      = optional(string)<br>    log_group_name              = optional(string)<br>    log_group_retention_in_days = optional(number, 1)<br>    log_group_kms_key_id        = optional(string)<br>    log_group_skip_destroy      = optional(bool)<br>    log_group_class             = optional(string)<br>    log_group_tags              = optional(map(string), {})<br>  })</pre> | `{}` | no |
 
 ## Outputs
 
