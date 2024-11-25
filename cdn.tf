@@ -73,7 +73,7 @@ module "cdn" {
     s3_bucket   = "CloudFront Access ${var.name} bucket"
   }
 
-  logging_config = var.log_bucket == null ? null : {
+  logging_config = var.log_bucket == null ? {} : {
     bucket = var.log_bucket
   }
 
@@ -81,8 +81,9 @@ module "cdn" {
     api_gateway = {
       domain_name = module.api_gateway.stage_domain_name
       custom_origin_config = {
+        https_port             = 80
         https_port             = 443
-        origin_protocol_policy = "match-viewer"
+        origin_protocol_policy = "https-only"
         origin_ssl_protocols   = ["TLSv1", "TLSv1.1", "TLSv1.2"]
       }
     }
@@ -118,7 +119,7 @@ module "cdn" {
     }
   ]
 
-  viewer_certificate = var.apigw_custom_domain_name == null ? null : {
+  viewer_certificate = var.apigw_custom_domain_name == null ? {} : {
     acm_certificate_arn = module.cdn_acm[0].acm_certificate_arn
     ssl_support_method  = "sni-only"
   }

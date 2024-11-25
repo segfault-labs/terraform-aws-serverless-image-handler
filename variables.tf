@@ -83,12 +83,12 @@ variable "secret_key" {
 
 variable "apigw_custom_domain_name" {
   type    = string
-  default = null
+  default = ""
 }
 
 variable "apigw_dns_zone_id" {
   type    = string
-  default = null
+  default = ""
 }
 
 variable "cdn_price_class" {
@@ -98,7 +98,7 @@ variable "cdn_price_class" {
 
 variable "cdn_custom_domain_name" {
   type    = string
-  default = null
+  default = ""
 }
 
 variable "cdn_custom_domain_names" {
@@ -108,7 +108,7 @@ variable "cdn_custom_domain_names" {
 
 variable "cdn_dns_zone_id" {
   type    = string
-  default = null
+  default = ""
 }
 
 variable "cdn_direct_access_path_pattern" {
