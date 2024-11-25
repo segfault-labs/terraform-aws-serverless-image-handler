@@ -7,7 +7,7 @@ resource "aws_lambda_permission" "gateway_invokes_bulk_metadata_get_lambda" {
 }
 
 module "api_gateway_acm" {
-  count = var.apigw_custom_domain_name != null ? 1 : 0
+  count = var.apigw_custom_domain_name == "" ? 0 : 1
 
   source  = "terraform-aws-modules/acm/aws"
   version = "5.1.1"
@@ -31,8 +31,9 @@ module "api_gateway" {
   name          = var.name
   protocol_type = "HTTP"
 
-  create_domain_name = var.apigw_custom_domain_name != null
+  create_domain_name = var.apigw_custom_domain_name != ""
   domain_name        = var.apigw_custom_domain_name
+  hosted_zone_name   = var.apigw_dns_zone_id
 
   stage_access_log_settings = var.stage_access_log_settings
   authorizers               = var.authorizers
