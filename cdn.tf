@@ -37,7 +37,7 @@ resource "aws_s3_bucket_policy" "allow_access_from_another_account" {
 }
 
 module "cdn_acm" {
-  count = var.cdn_custom_domain_name == null ? 0 : 1
+  count = var.cdn_custom_domain_name == "" ? 0 : 1
 
   source  = "terraform-aws-modules/acm/aws"
   version = "5.1.1"
@@ -60,7 +60,7 @@ module "cdn" {
   source  = "terraform-aws-modules/cloudfront/aws"
   version = "3.4.1"
 
-  aliases = var.apigw_custom_domain_name == "" ? [] : distinct(concat([var.cdn_custom_domain_name], var.cdn_custom_domain_names))
+  aliases = var.cdn_custom_domain_name == "" ? [] : distinct(concat([var.cdn_custom_domain_name], var.cdn_custom_domain_names))
 
   comment         = var.cdn_custom_domain_name
   enabled         = true
