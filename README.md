@@ -10,13 +10,13 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.77.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.77.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_api_gateway"></a> [api\_gateway](#module\_api\_gateway) | terraform-aws-modules/apigateway-v2/aws | 5.2.0 |
+| <a name="module_api_gateway"></a> [api\_gateway](#module\_api\_gateway) | ./modules/api_gateway | n/a |
 | <a name="module_api_gateway_acm"></a> [api\_gateway\_acm](#module\_api\_gateway\_acm) | terraform-aws-modules/acm/aws | 5.1.1 |
 | <a name="module_cdn"></a> [cdn](#module\_cdn) | terraform-aws-modules/cloudfront/aws | 3.4.1 |
 | <a name="module_cdn_acm"></a> [cdn\_acm](#module\_cdn\_acm) | terraform-aws-modules/acm/aws | 5.1.1 |

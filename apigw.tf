@@ -25,27 +25,9 @@ module "api_gateway_acm" {
 }
 
 module "api_gateway" {
-  source  = "terraform-aws-modules/apigateway-v2/aws"
-  version = "5.2.0"
+  source = "./modules/api_gateway"
 
-  name          = var.name
-  protocol_type = "HTTP"
-
-  create_domain_name = var.apigw_custom_domain_name != ""
-  domain_name        = var.apigw_custom_domain_name
-  hosted_zone_name   = var.apigw_dns_zone_id
-
-  stage_access_log_settings = var.stage_access_log_settings
-  authorizers               = var.authorizers
-
-  routes = {
-    "ANY /{proxy+}" = {
-      integration = {
-        uri                    = module.lambda_function.lambda_function_arn
-        payload_format_version = "2.0"
-        timeout_milliseconds   = 12000
-      }
-    }
-  }
+  name              = var.name
+  lambda_invoke_arn = module.lambda_function.lambda_function_arn
 }
 
