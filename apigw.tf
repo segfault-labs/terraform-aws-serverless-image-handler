@@ -41,7 +41,7 @@ module "api_gateway" {
   routes = {
     "ANY /{proxy+}" = {
       integration = {
-        uri                    = "arn:aws:lambda:eu-west-1:052235179155:function:my-function"
+        uri                    = module.lambda_function.lambda_function_arn
         payload_format_version = "2.0"
         timeout_milliseconds   = 12000
       }
