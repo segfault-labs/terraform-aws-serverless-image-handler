@@ -119,7 +119,7 @@ module "cdn" {
     }
   ]
 
-  viewer_certificate = var.apigw_custom_domain_name == null ? {} : {
+  viewer_certificate = var.cdn_custom_domain_name == "" ? {} : {
     acm_certificate_arn = module.cdn_acm[0].acm_certificate_arn
     ssl_support_method  = "sni-only"
   }
