@@ -3,7 +3,7 @@ resource "aws_lambda_permission" "gateway_invokes_bulk_metadata_get_lambda" {
   statement_id  = "AllowExecutionFromApiGateway"
   action        = "lambda:InvokeFunction"
   principal     = "apigateway.amazonaws.com"
-  source_arn    = "${module.api_gateway.api_execution_arn}/*/*/*"
+  source_arn    = "${module.api_gateway.api_execution_arn}/*/*/{proxy+}"
 }
 
 module "api_gateway_acm" {
