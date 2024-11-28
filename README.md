@@ -49,8 +49,8 @@
 | <a name="input_cors_enabled"></a> [cors\_enabled](#input\_cors\_enabled) | n/a | `string` | `"Yes"` | no |
 | <a name="input_cors_origin"></a> [cors\_origin](#input\_cors\_origin) | n/a | `string` | `"*"` | no |
 | <a name="input_lambda_auto_webp"></a> [lambda\_auto\_webp](#input\_lambda\_auto\_webp) | n/a | `string` | `"No"` | no |
-| <a name="input_lambda_default_fallback_image_key"></a> [lambda\_default\_fallback\_image\_key](#input\_lambda\_default\_fallback\_image\_key) | n/a | `string` | `"No"` | no |
-| <a name="input_lambda_enable_default_fallback_image"></a> [lambda\_enable\_default\_fallback\_image](#input\_lambda\_enable\_default\_fallback\_image) | n/a | `string` | `""` | no |
+| <a name="input_lambda_default_fallback_image_key"></a> [lambda\_default\_fallback\_image\_key](#input\_lambda\_default\_fallback\_image\_key) | n/a | `string` | `""` | no |
+| <a name="input_lambda_enable_default_fallback_image"></a> [lambda\_enable\_default\_fallback\_image](#input\_lambda\_enable\_default\_fallback\_image) | n/a | `string` | `"No"` | no |
 | <a name="input_lambda_enable_signature"></a> [lambda\_enable\_signature](#input\_lambda\_enable\_signature) | n/a | `string` | `"No"` | no |
 | <a name="input_log_bucket"></a> [log\_bucket](#input\_log\_bucket) | n/a | `string` | `null` | no |
 | <a name="input_log_retention"></a> [log\_retention](#input\_log\_retention) | n/a | `number` | `1` | no |

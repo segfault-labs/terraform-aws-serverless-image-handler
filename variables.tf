@@ -63,12 +63,12 @@ variable "lambda_enable_signature" {
 
 variable "lambda_enable_default_fallback_image" {
   type    = string
-  default = ""
+  default = "No"
 }
 
 variable "lambda_default_fallback_image_key" {
   type    = string
-  default = "No"
+  default = ""
 }
 
 variable "secrets_manager" {
