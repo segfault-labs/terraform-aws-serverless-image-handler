@@ -67,7 +67,7 @@ module "lambda_function" {
   create_package = false
   s3_existing_package = {
     bucket = "solutions-${data.aws_region.current.name}"
-    key    = "serverless-image-handler/v6.3.1/ec7210ae9c3270e222829ffafa69c8899b4806494ed2a55b41e3d51fe1829cf4.zip"
+    key    = "serverless-image-handler/v6.3.1/511eb5cd22ad39765020db572c60d5f41e70061dc483f9459d2396dfde157a94.zip"
   }
 
   environment_variables = {
