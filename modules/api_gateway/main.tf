@@ -40,7 +40,7 @@ resource "aws_api_gateway_integration" "this" {
   uri                     = var.lambda_invoke_arn
 }
 
-resource "aws_api_gateway_integration" "this" {
+resource "aws_api_gateway_integration" "this_parent" {
   rest_api_id             = aws_api_gateway_rest_api.this.id
   resource_id             = aws_api_gateway_resource.parent.id
   http_method             = aws_api_gateway_method.any.http_method
