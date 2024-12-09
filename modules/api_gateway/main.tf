@@ -34,22 +34,6 @@ resource "aws_api_gateway_integration" "this" {
   uri                     = var.lambda_invoke_arn
 }
 
-resource "aws_api_gateway_method_response" "response_200" {
-  rest_api_id = aws_api_gateway_rest_api.this.id
-  resource_id = aws_api_gateway_resource.this.id
-  http_method = aws_api_gateway_method.any.http_method
-  status_code = "200"
-}
-
-resource "aws_api_gateway_integration_response" "this" {
-  rest_api_id = aws_api_gateway_rest_api.this.id
-  resource_id = aws_api_gateway_resource.this.id
-  http_method = aws_api_gateway_method.any.http_method
-  status_code = aws_api_gateway_method_response.response_200.status_code
-
-  content_handling = "CONVERT_TO_BINARY"
-}
-
 resource "aws_api_gateway_deployment" "this" {
   rest_api_id = aws_api_gateway_rest_api.this.id
 
