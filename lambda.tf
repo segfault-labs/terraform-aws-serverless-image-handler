@@ -58,6 +58,7 @@ module "lambda_function" {
 
   handler     = "index.handler"
   runtime     = "nodejs20.x"
+  timeout     = 29
   memory_size = 1024
 
   attach_policies    = true
